@@ -1,0 +1,57 @@
+ echo wp_get_theme()->get('Name');
+
+ get_template_directory_uri();
+
+ // add_theme_support('post-thumbnails');
+            add_theme_support('post-thumbnails',array('post', 'service', 'page'));
+          
+            add_action('wp_enqueue_scripts','mywpscript');
+            
+            if(!function_exists('mywpscript')){
+                function mywpscript(){
+
+                    wp_enqueue_style("unique_id", get_stylesheet_uri());
+                //     wp_enqueue_style("main_css", 
+                //     get_parent_theme_file_uri('assets/css/main.css'),
+                //     array(),
+                //     wp_get_theme()->get('Version'),'all'
+                // );
+ 
+
+                wp_add_inline_style(
+                  'unique_id',
+                  'body{
+                    background-color: red;
+                  }'  
+                );  
+
+                wp_add_inline_script
+
+                get_theme_file_uri()
+                get_parent_theme_file_uri()
+                get_template_directory_uri()
+
+
+                get_sidebar()
+                get_header()
+                get_footer()
+
+                get_template_part()
+                get_permalink()
+                have_posts()
+                the_post()
+                the_title()
+                the_content() 
+                the_category();
+
+                the_author();
+                the_excerpt();
+                the_ID();
+                the_meta();
+
+                the_time();
+
+                get_post_type();
+
+
+                

@@ -1,0 +1,13 @@
+Required files 
+style.css 
+index.php 
+
+Optional Files 
+README.txt 
+functions.php 
+screenshort.png 
+theme.json 
+
+assts/css/
+asste/ image/ 
+assts/js 
