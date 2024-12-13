@@ -1,5 +1,8 @@
 <?php 
 
+
+  $connect = mysqli_connect('localhost', 'root', '', 'php89');
+
   if(isset($_POST['registertion'])){
     
     $name = $_POST['fullname'];
@@ -8,12 +11,17 @@
     $phone = $_POST['phone'];
     $gender = $_POST['gender'];
 
-    if(!empty($name) && !empty($email) && !empty($password) && !empty($phone) && !empty($gender)){
+    if(!empty($name) && !empty($email) && !empty($password) && !empty($phone) && !empty($gender)){ 
 
-    }else{
+       $query = mysqli_query($connect, "INSERT INTO users(name, email, password, phone, gender) VALUES('$name', '$email', '$password', '$phone', '$gender')"); 
+
+        if($query){
+            $success = 'Your registration has been sucessfully submited';
+        }
+
+    }else{ 
         $error = 'Please fill up the required field';
     }
-
   }
 
 ?>
@@ -35,6 +43,15 @@
                     if(isset($error)){
                         echo $error;
                     }
+                ?>
+            </h3>
+            <h3 class="text-success">
+                <?php 
+                
+                    if(isset($success)){
+                        echo $success;
+                    }
+
                 ?>
             </h3>
         </div>
