@@ -14,9 +14,16 @@
     if(isset($_POST['create'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
+        $createQuery = "INSERT INTO `users` (`name`, `email`) VALUES ('$name', '$email')";
+        $create = mysqli_query($conn, $createQuery);
+        if(!$create){
+            echo "<script>alert('Something went worng')</script>";
+        } else{
+            echo "<script>alert('Student added sucessfully')</script>";
+        }
     }
-    
-?> 
+
+?>  
 
 <h2>All Users</h2>
 
@@ -49,7 +56,7 @@
             <br><br>
 
             <h2>Add Student</h2>
-            <form action="" method="">
+            <form action="" method="POST">
                 <input type="text" placeholder="User Name" name="name">
                 <br><br>
                 <input type="email" placeholder="User Email" name="email" require>
