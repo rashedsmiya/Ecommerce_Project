@@ -68,11 +68,26 @@ if (isset ($_POST['update'])){
     $uid = $_GET['uid'];
     $updateQuery = "UPDATE `users` SET `name` = `$name`, `email` = '$email' WHERE `id` = $uid";
     $updat = mysqli_query($conn, $updateQuery);
-    if(!$update){
-        echo "<script>alert('Something went wrong')</script>";
-    } else {
-        echo "<script>alert('Student updated successfully')</script>"; 
+
+    if(empty($name)){
+        $errName = " <span style='color': red'>Name is required</span>";
+    } else{
+        $errName = "$name";
     }
+
+    if(empty($email)){
+        $errEmail = " <span style='color': red'>Email is required</span>";
+    } else{
+        $errEmail = "$email";
+    }
+    
+   if(!empty($crrName) && isset($crrEmail)){
+       if(!$update){
+           echo "<script>alert('Something went wrong')</script>";
+       } else {
+           echo "<script>alert('Student updated successfully')</script>"; 
+       }
+   } 
 }
  
     if(isset($_GET['uid'])){
@@ -85,9 +100,9 @@ if (isset ($_POST['update'])){
     <h2>Update user</h2>
     <form action="" method="POST" >
         <input type="hidden" name="uid" value="<?= $user['id'] ?>">
-        <input type="text" placeholder="User Name" name="name" required value="<?= $user['name'] ?>">
+        <input type="text" placeholder="User Name" name="name"  value="<?= $user['name'] ?>">
          <br>
-        <input type="email" placeholder="User Email" name="email" required value="<?= $user['email'] ?>">
+        <input type="email" placeholder="User Email" name="email"  value="<?= $user['email'] ?>">
          <br>
         <input type="submit" value="Update Student" name="update">
         <a href="<?= basename($_SERVER['PHP_SELF']) ?>">
