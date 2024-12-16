@@ -11,7 +11,14 @@
     $read = mysqli_query($conn, $readQuery);
     $users = mysqli_fetch_all($read, MYSQLI_ASSOC);
 
+    if(isset($_POST['create'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+    }
+    
 ?> 
+
+<h2>All Users</h2>
 
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
@@ -21,6 +28,7 @@
             <td>Registered Date</td>
             <td>Action</td>
         </tr> 
+     
         <?php 
         $sn = 1;
         foreach($users as $user) { ?>
@@ -37,5 +45,16 @@
                     </td>
                 </tr>
             <?php } ?>
-    </table>
+            </table>  
+            <br><br>
+
+            <h2>Add Student</h2>
+            <form action="" method="">
+                <input type="text" placeholder="User Name" name="name">
+                <br><br>
+                <input type="email" placeholder="User Email" name="email" require>
+                <br><br>
+                <input type="submit" value="Add Student" name="create"> 
+            </form>
+  
  
