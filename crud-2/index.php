@@ -26,6 +26,12 @@
 
          </div>
 <div class="col-md-8">
+    <?php if(isset($_SESSION['msg']) ) { ?>
+        <br>
+        <div class="alert alert-success" role="alert">
+            Student Added Successfully
+        </div>
+       <?php session_destroy(); } ?> 
     <h1>Student list</h1>
     <a href="insert.php" class="btn">Add Student</a>
     <br><br>
