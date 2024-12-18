@@ -1,11 +1,7 @@
 <?php 
-
     $conn = new mysqli('localhost', 'root', '', 'school');
     $sql = "SELECT * FROM students";
     $result = $conn->query($sql);
-
-    
-
 ?>
 
 
@@ -48,11 +44,10 @@
             </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+     </form>
 
-
-</div>
-</div>
+      </div>
+   </div>
 </div>
 </body>
 </html>
