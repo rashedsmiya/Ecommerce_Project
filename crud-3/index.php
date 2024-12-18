@@ -1,38 +1,69 @@
 <?php 
 
-    if(isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $email    = $_POST['email'];
-        $password = $_POST['password'];
+     $connection = mysqli_connect('localhost', 'root', '', 'users');
 
-        if($username && $email && $password){
-              
-        }
+     if(!$connection){
+       die("Not Connection.". mysqli_error($connection));
+     }
 
-        $connection = mysqli_connect('localhost', 'root', '', 'users');
+     $query = "SELECT * FROM user_info";
 
-        if(!$connection){
-           die("Not connected.". mysqli_error($connection));
-    } 
+     $adanprodun = mysqli_query($connection, $query);
 
-    $query = "INSERT INTO user_info(username, email, password)";
-    $query .="VALUES ('$username', '$email', '$password')";
+     $count = mysqli_num_rows($adanprodun);
 
-    $resul = mysqli_query($connection, $query);
+     if($count > 0){
 
-    if(!$resul){
-         die("Not Inserted" . mysqli_error());
-    }  
- }  
+
+          if(isset($_REQUEST['deleted'])){
+               echo "<font color='green'>Date Deleted</font>";
+          }
+
 
 ?>
 
-<form action="index.php" method="post">
+<table class="table">
+      <thead class="thead-dark">
+          <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Password</th>
+               <th>Action</th>
+          </tr>
+</thead>
 
-       <input type="text" name="username" placeholder="username">
-       <input type="email" name="email" placeholder="email">
-       <input type="password" name="password" placeholder="password">
-       <input type="submit" name="submit">
+ <?php
 
-</form>
+     while($row = mysqli_fetch_assoc($adanprodun)) {
+           
+          $db_id       =    $row['id'];
+          $username    =    $row['username'];  
+          $email       =    $row['email']; 
+          $password    =    $row['password'];
 
+?>
+       
+          <tbody>
+               <tr>
+                    <td><?php echo $db_id; ?></td>
+                    <td><?php echo $username; ?></td>
+                    <td><?php echo $email; ?></td>
+                    <td><?php echo $password; ?></td>
+                    <td><a href="delete.php?id=<?php echo $db_id ?>">Delete</a></td>
+               </tr>
+          </tbody>
+
+   <?php  
+       
+     } 
+?>
+
+</table>   
+
+<?php 
+
+} else{
+echo "You don't have any data in your database";
+}
+ 
