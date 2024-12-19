@@ -15,7 +15,7 @@
      if($count > 0){
 
      if(isset($_REQUEST['deleted'])){
-          echo "<font color='green'>Date Deleted</font>";
+          echo "<font color='green'>Date Update</font>";
      }
 ?>
 
