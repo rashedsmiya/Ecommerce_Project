@@ -14,12 +14,9 @@
 
      if($count > 0){
 
-
-          if(isset($_REQUEST['deleted'])){
-               echo "<font color='green'>Date Deleted</font>";
-          }
-
-
+     if(isset($_REQUEST['deleted'])){
+          echo "<font color='green'>Date Deleted</font>";
+     }
 ?>
 
 <table class="table">
@@ -50,12 +47,12 @@
                     <td><?php echo $username; ?></td>
                     <td><?php echo $email; ?></td>
                     <td><?php echo $password; ?></td>
-                    <td><a href="delete.php?id=<?php echo $db_id ?>">Delete</a></td>
+                    <td><a href="single_data_edit.php?edit_id=<?php echo $db_id; ?>">Edit</a> || <a href="delete.php?id=<?php echo $db_id ?>">Delete</a></td>
                </tr>
           </tbody>
 
-   <?php  
-       
+   <?php   
+        
      } 
 ?>
 
