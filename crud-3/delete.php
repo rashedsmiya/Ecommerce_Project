@@ -6,14 +6,18 @@
        die("Not Connection.". mysqli_error($connection));
      }
 
-     echo $recv = $_REQUEST['id'];
+     if(isset($_REQUEST['submit'])){
+       $user  =  $_REQUEST['username'];
+       $email =  $_REQUEST['email'];
+       $pass  =  $_REQUEST['password'];
+       $hidden_id = $_REQUEST['updating_hidden_id'];
 
-     $query = "DELETE FROM user_info WHERE id = $recv";
-     
-     $run_delete_query = mysqli_query($connection, $query);
+       $update_query = "UPDATE user_info SET usrname='$user', email='$email', password='$pass', WHERE id=$hidden_id";
+       
+       $final_update_query = mysqli_query($connection, $update_query);
 
-     if($run_delete_query){
-        header("location: index.php?deleted");
+       if($final_update_query){
+         header("location: index.php?updated");
+       }
      }
-
       
