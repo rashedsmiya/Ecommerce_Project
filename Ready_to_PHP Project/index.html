@@ -77,33 +77,147 @@
                 <li class="nav-item my-0">
                      <hr /> 
                 </li>
+
+                <li class="nav-item">
+                  <div class="text-secondary small text-uppercase fw-bold">
+                    Inventory
+                  </div>
+                </li>
                
                 <li class="nav-item">
                     <a 
-                      class="nav-link"
+                      class="nav-link sidebar-link"
                       data-bs-toggle="collapse"
-                      href="#collapseExample"
+                      href="#booksMgmt"
                       role="button"
                       aria-expanded="false"
-                      aria-controls="collapseExample">
+                      aria-controls="booksMgmt">
                       <i class="fa-solid fa-book me-2"></i> Books Management
-                      <span><i class="fa-solid fa-chevron-down float-end"></i></span>
+                      <span class="right-icon float-end">
+                        <i class="fa-solid fa-chevron-down "></i>
+                      </span>
                       </a>
 
-                      <div class="collapse" id="collapseExample">
+                      <div class="collapse" id="booksMgmt">
                           <ul class="navbar-nav ps-3">
                               <li>
-                                 <a href="#" class="nav-link">Add New</a>
-                              </li>
-                              
-                              <li>
-                                <a href="#" class="nav-link">Manage All</a>
+                                 <a href="#" class="nav-link"><i class="fa-solid fa-plus me-2"></i>Add New</a>
+                              </li>  
+
+                              <li> 
+                                <a href="#" class="nav-link"><i class="fa-solid fa-list me-2"></i>Manage All</a>
                              </li>
                           </ul>
                       </div>
-               </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a 
+                    class="nav-link sidebar-link"
+                    data-bs-toggle="collapse"
+                    href="#studentMgmt"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="studentMgmt">
+                    <i class="fa-solid fa-people-line me-2"></i> Students Management
+                    <span class="right-icon float-end">
+                      <i class="fa-solid fa-chevron-down "></i>
+                    </span>
+                    </a>
+ 
+                    <div class="collapse" id="studentMgmt">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                               <a href="#" class="nav-link"><i class="fa-solid fa-plus me-2"></i>Add New</a>
+                            </li>  
+
+                            <li> 
+                              <a href="#" class="nav-link"><i class="fa-solid fa-list me-2"></i>Manage All</a>
+                           </li>
+                        </ul>
+                    </div>
+              </li>
+
+              <li class="nav-item my-0">
+                <hr /> 
+              </li>
+
+              <li class="nav-item">
+                <div class="text-secondary small text-uppercase fw-bold">
+                  Business
+                </div>
+              </li>
+
+                <li class="nav-item">
+                  <a 
+                    class="nav-link sidebar-link"
+                    data-bs-toggle="collapse"
+                    href="#booksLoanMgmt"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="booksLoanMgmt">
+                    <i class="fa-solid fa-book me-2"></i> Books Loan
+                    <span class="right-icon float-end">
+                      <i class="fa-solid fa-chevron-down "></i>
+                    </span>
+                    </a>
+
+                    <div class="collapse" id="booksLoanMgmt">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                              <a href="#" class="nav-link"><i class="fa-solid fa-plus me-2"></i>Add New</a>
+                            </li>  
+
+                            <li> 
+                              <a href="#" class="nav-link"><i class="fa-solid fa-list me-2"></i>Manage All</a>
+                          </li>
+                        </ul>
+                    </div>
+              </li>
+
+              <li class="nav-item">
+                <a 
+                  class="nav-link sidebar-link"
+                  data-bs-toggle="collapse"
+                  href="#subsMgmt"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="#subsMgmt">
+                  <i class="fa-solid fa-indian-rupee-sign me-2"></i> Subscription
+                  <span class="right-icon float-end">
+                    <i class="fa-solid fa-chevron-down "></i>
+                  </span>
+                  </a>
+
+                  <div class="collapse" id="subsMgmt">
+                      <ul class="navbar-nav ps-3">
+                          <li>
+                            <a href="#" class="nav-link"><i class="fa-solid fa-plus me-2"></i>Plans</a>
+                          </li>  
+
+                          <li> 
+                            <a href="#" class="nav-link"><i class="fa-solid fa-list me-2"></i>Purchase History</a>
+                        </li>
+                      </ul>
+                  </div>
+            </li>
+
+            <li class="nav-item my-0">
+              <hr /> 
+           </li>
+                 
+            <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">
+                <i class="fa-solid fa-right-from-bracket me-2"></i>Lgout
+               </a>
+            </li>
+           </ul>
           </div>
         <!-- Top navbar end  -->
+
+        <main class="">
+          <h4>Dashboard</h4>
+        </main>
 
      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -19,6 +19,14 @@ body{
    width: var(--offconvas-with) !important;
 }
 
+.sidebar-link .right-icon{
+    transition: all 0.5s;
+} 
+
+.sidebar-link[aria-expanded="true"] .right-icon{
+    transform: rotate(180deg);
+}
+
 @media (min-width: 992px) {
     .offconvas-backdrop{
         display: none !important;
@@ -30,3 +38,4 @@ body{
     }
 }
   
+
