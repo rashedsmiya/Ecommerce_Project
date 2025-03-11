@@ -31,11 +31,15 @@ body{
     .offconvas-backdrop{
         display: none !important;
     }
-
     .sidebar-nav{
         transform: none !important;
         visibility: visible !important;
     }
+    main{
+        margin-left: var(--offconvas-with);
+    }
 }
+
+ 
   
 
